@@ -1,7 +1,7 @@
 {% extends "temp.html" %}
 
 {% block head %}
-<script type="text/javascript" src="scripts/channels.js"></script>
+<script src="{{ url_for('static',filename="js/channels.js")}}"></script>
 {% block title %}Channels{% endblock %}
 {% endblock %}
 
