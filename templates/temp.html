@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      {% block head %}
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+      {% endblock %}
+  </head>
+  <body>
+    <button type="button" name="logout">Logout</button>
+    {% block body %}
+    {% endblock %}
+  </body>
+</html>

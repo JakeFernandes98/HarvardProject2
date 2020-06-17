@@ -1,0 +1,30 @@
+{% extends "temp.html" %}
+
+{% block head %}
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    var socket = io.connect(location.protocol + "//" + document.domain + ":" + location.port);
+    socket.on('connect', () => {
+      document.querySelector('send').onclick = () => {
+        const message = document.getElementbyId("message").value;
+        socket.emit('submit message', {'message':message,'username':{{username}}})
+      }
+    });
+
+    socket.on('send message', data => {
+      const li = document.createElement('li');
+      li.innerHTML = ``
+    });
+  });
+</script>
+{% block title %}Channel {{channelid}}{% endblock %}
+{% endblock %}
+
+{% block body %}
+<h1>Welcome to Channel {{channelid}}, {{username}}</h1>
+<ul id="messages">
+
+</ul>
+
+{% endblock %}

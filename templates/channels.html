@@ -1,0 +1,21 @@
+{% extends "temp.html" %}
+
+{% block head %}
+<script type="text/javascript" src="scripts/channels.js"></script>
+{% block title %}Channels{% endblock %}
+{% endblock %}
+
+{% block body %}
+  <h1>Welcome {{username}}</h1>
+  <h2>Below is a list of channels, if you wish to add a channel please press the add channel button</h2>
+  <h2>If you would like to logout, please press the logout button</h2>
+
+  <form action="index.html" method="post">
+    <input type="text" name="chanName" placeholder="Channel Name">
+    <button type="button" name="addchan">Add Channel</button>
+  </form>
+
+  <ul id="channellist">
+    </ul>
+
+{% endblock %}
