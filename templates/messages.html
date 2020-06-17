@@ -18,10 +18,14 @@
     });
   });
 </script>
-{% block title %}Channel {{channelid}}{% endblock %}
+{% block title %}{% endblock %}
 {% endblock %}
 
 {% block body %}
+<form action="{{ url_for('listChan') }}" method="post">
+  <button>Back</button>
+</form>
+
 <h1>Welcome to Channel {{channelid}}, {{username}}</h1>
 <ul id="messages">
 

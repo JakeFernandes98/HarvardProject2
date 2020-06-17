@@ -1,8 +1,8 @@
 {% extends "temp.html" %}
 
 {% block head %}
-<script src="{{ url_for('static',filename="js/channels.js")}}"></script>
-{% block title %}Channels{% endblock %}
+<script src="static/js/channels.js"></script>
+{% block title %}{% endblock %}
 {% endblock %}
 
 {% block body %}
@@ -11,8 +11,8 @@
   <h2>If you would like to logout, please press the logout button</h2>
 
   <form action="index.html" method="post">
-    <input type="text" name="chanName" placeholder="Channel Name">
-    <button type="button" name="addchan">Add Channel</button>
+    <input type="text" id="chanName" placeholder="Channel Name">
+    <button type="button" id="addchan">Add Channel</button>
   </form>
 
   <ul id="channellist">
