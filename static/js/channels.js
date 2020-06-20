@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelector('#addchan').onclick = function() {
     console.log("Button clicked");
-    chanName = document.getElementById('chanName').value;
+    input = document.getElementById('chanName')
+    chanName = input.value;
     list.push(chanName);
     const li = document.createElement('li');
     const link = document.createElement('a');
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.innerHTML = chanName;
     li.appendChild(link);
     document.querySelector('#channellist').appendChild(li);
+    input.value = "";
   }
 
   let counter = 0;

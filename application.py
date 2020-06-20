@@ -42,6 +42,7 @@ def channel(channelid):
 
 @socketio.on("submit message")
 def msg(data):
-    message = data.message
-    user = data.user
-    emit("add message", {"message":data,"username":user},broadcast=True)
+    message = data["message"]
+    user = session.get("username")
+    print(message,user)
+    emit("send message", {"message":message,"username":user},broadcast=True)
